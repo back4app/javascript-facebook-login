@@ -8,7 +8,7 @@ function logIn() {
 
                     user.save(null, {
                         success: function(user) {
-                            alert('User logged in and sign up through Facebook, with username: ' + user.attributes.username + ' and email: ' + user.attributes.email);
+                            alert('User logged in and sign up through Facebook, with username: ' + user.get('username') + ' and email: ' + user.get('email'));
 
                             // You should redirect the user to another page after a successful login.
                             window.location.replace('http://js-fb-login.back4app.io/logout.html');
@@ -23,7 +23,6 @@ function logIn() {
                 // You should redirect the user to another page after a successful login.
                 window.location.replace('http://js-fb-login.back4app.io/logout.html');
             }
-
         },
         error: function(user, error) {
             console.log("User cancelled the Facebook login or did not fully authorize.");
