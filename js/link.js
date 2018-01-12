@@ -1,13 +1,4 @@
-
-
-
-
-
-
-
 function link() {
-    console.log("On the link function");
-
     var user = Parse.User.current();
     if (!Parse.FacebookUtils.isLinked(user)) {
         Parse.FacebookUtils.link(user, null, {
@@ -22,15 +13,4 @@ function link() {
     else {
         alert("Can't link user to facebook because he is already linked");
     }
-}
-
-function unlink() {
-    console.log("On the unlink function");
-
-    var user = Parse.User.current();
-    Parse.FacebookUtils.unlink(user, {
-        success: function(user) {
-            alert("The user is no longer associated with their Facebook account.");
-        }
-    });
 }
